@@ -7,6 +7,6 @@
 
 
 # Experiment 1:
-tasks and files:
--write three basic programs -> BasicThree.java
--use socket programming -> Client.java and Server.java
+tasks and files:  
+- write three basic programs -> BasicThree.java  
+- use socket programming -> Client.java and Server.java
