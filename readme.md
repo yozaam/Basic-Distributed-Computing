@@ -10,3 +10,7 @@
 tasks and files:  
 - write three basic programs -> BasicThree.java  
 - use socket programming -> Client.java and Server.java
+
+# Experiment 2
+task
+- write a server which takes a string and returns the cryptographic hash
