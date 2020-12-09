@@ -1,7 +1,7 @@
 import java.io.*;  
 import java.net.*;  
 
-public class Server {  
+public class HashServer {  
   public static void main(String[] args){  
     try{
       System.out.println("Listening at 6666");
@@ -13,7 +13,8 @@ public class Server {
         new DataOutputStream(s.getOutputStream());  
       String plaintext =(String)dis.readUTF();  
       System.out.println("plaintext: " + plaintext);  
-      String hashtext = (String)plaintext.hashCode();
+      String hashtext = String.valueOf(plaintext.hashCode());
+      System.out.println("hashtext: " + hashtext);
       dout.writeUTF(hashtext);
       dout.flush();
       ss.close();  

@@ -2,7 +2,7 @@ import java.util.Scanner;
 import java.io.*;  
 import java.net.*; 
 
-class Client {
+class HashClient {
   public static void main(String[] args) {
     try{
       System.out.println("What's your plaintext?");
@@ -14,10 +14,10 @@ class Client {
       DataInputStream din=
         new DataInputStream(s.getInputStream());  
       dout.writeUTF(plaintext);  
-      dout.flush();
-      dout.close();
       String hashtext = din.readUTF();
       System.out.println("hashtext: "+hashtext);
+      dout.flush();
+      dout.close();
       s.close();  
     } catch(Exception e) {
       System.out.println(e);
