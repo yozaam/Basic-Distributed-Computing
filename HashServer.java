@@ -11,8 +11,9 @@ public class HashServer {
         new DataInputStream(s.getInputStream());  
       DataOutputStream dout=
         new DataOutputStream(s.getOutputStream());  
-      String plaintext =(String)dis.readUTF();  
+      String plaintext = "";
       while (plaintext != "exit") {
+        plaintext =(String)dis.readUTF();  
         System.out.println("plaintext: " + plaintext);  
         String hashtext = String.valueOf(plaintext.hashCode());
         System.out.println("hashtext: " + hashtext);

@@ -5,19 +5,20 @@ import java.net.*;
 class HashClient {
   public static void main(String[] args) {
     try{
-      System.out.println("What's your plaintext?");
       Scanner sc = new Scanner(System.in);
       Socket s=new Socket("localhost",6666);  
       DataOutputStream dout=
         new DataOutputStream(s.getOutputStream());
       DataInputStream din=
         new DataInputStream(s.getInputStream()); 
-      String plaintext = sc.nextLine();
+      String plaintext = "";
       while (plaintext != "exit") {
-        dout.writeUTF(plaintext);  
+        System.out.print("Enter plaintext: ");
+        plaintext = sc.nextLine();
+        dout.writeUTF(plaintext);
+        dout.flush();  
         String hashtext = din.readUTF();
         System.out.println("hashtext: "+hashtext);
-        dout.flush();
       } 
       dout.close();
       s.close();  
