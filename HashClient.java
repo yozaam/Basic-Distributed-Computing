@@ -12,7 +12,7 @@ class HashClient {
       DataInputStream din=
         new DataInputStream(s.getInputStream()); 
       String plaintext = "";
-      while (plaintext != "exit") {
+      while (!plaintext.equals("exit")) {
         System.out.print("Enter plaintext: ");
         plaintext = sc.nextLine();
         dout.writeUTF(plaintext);

@@ -12,7 +12,7 @@ public class HashServer {
       DataOutputStream dout=
         new DataOutputStream(s.getOutputStream());  
       String plaintext = "";
-      while (plaintext != "exit") {
+      while (!plaintext.equals("exit")) {
         plaintext =(String)dis.readUTF();  
         System.out.println("plaintext: " + plaintext);  
         String hashtext = String.valueOf(plaintext.hashCode());
