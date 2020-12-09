@@ -12,11 +12,13 @@ public class HashServer {
       DataOutputStream dout=
         new DataOutputStream(s.getOutputStream());  
       String plaintext =(String)dis.readUTF();  
-      System.out.println("plaintext: " + plaintext);  
-      String hashtext = String.valueOf(plaintext.hashCode());
-      System.out.println("hashtext: " + hashtext);
-      dout.writeUTF(hashtext);
-      dout.flush();
+      while (plaintext != "exit") {
+        System.out.println("plaintext: " + plaintext);  
+        String hashtext = String.valueOf(plaintext.hashCode());
+        System.out.println("hashtext: " + hashtext);
+        dout.writeUTF(hashtext);
+        dout.flush();
+      }
       ss.close();  
     } catch(Exception e) {
       System.out.println(e);
