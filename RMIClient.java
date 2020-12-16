@@ -1,6 +1,6 @@
 import java.rmi.*;
 
-public class MyClient{
+public class RMIClient{
 
   public static void main(String args[]){
     try{
@@ -10,5 +10,5 @@ public class MyClient{
       System.out.println(e);
     }
   }
-  
+
 }
