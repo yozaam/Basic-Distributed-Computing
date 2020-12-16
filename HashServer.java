@@ -20,7 +20,7 @@ public class HashServer {
         dout.writeUTF(hashtext);
         dout.flush();
       }
-      ss.close();  
+      s.close();  
     } catch(Exception e) {
       System.out.println(e);
     }
