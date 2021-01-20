@@ -11,4 +11,9 @@ public class RMIClass extends UnicastRemoteObject implements RMIInterface{
     return x*y;
   }  
   
+  public String hash(String plaintext) {
+	String hashtext = String.valueOf(plaintext.hashCode());
+	return hashtext;
+  }
+
 }  
